@@ -24,7 +24,7 @@ type Ashes struct {
 #### Bowie
 
 ```go
-type Bowie struct {
+type Ziggy struct {
   orbit string
   comet os.FileMode
 }
@@ -39,7 +39,7 @@ type Bowie struct {
 + Mars
 
 ```go
-func (david *Bowie) Star(k []byte, v []byte) {}
+func (david *Bowie) Star(orbit []byte, comet []byte) {}
 ```
 
 + Oddity
@@ -60,4 +60,4 @@ func (david *Bowie) LiftOff() {}
 
 
 
-#### Bolt *bold
+#### Bolt *bolt
