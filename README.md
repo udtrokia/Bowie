@@ -25,7 +25,7 @@ type Ashes struct {
 
 ```go
 type Bowie struct {
-	orbit string
+  orbit string
   comet os.FileMode
 }
 ```
