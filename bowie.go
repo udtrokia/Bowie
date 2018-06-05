@@ -20,17 +20,17 @@ import (
 )
 
 type Bowie struct {
-	path string
-	mode os.FileMode
+	moonage string
+	daydream os.FileMode
 }
 
-type Pair struct {
-	key []byte
-	value []byte
+type Ashes struct {
+	comet []byte
+	orbit []byte
 }
 
-func Ziggy(path string, mode os.FileMode) Bowie {
-	return Bowie{path: path, mode:mode};
+func Ziggy(moonage string, daydream os.FileMode) Bowie {
+	return Bowie{moonage: moonage, daydream: daydream};
 }
 
 func (david *Bowie) Mars() *bolt.DB {
@@ -41,16 +41,16 @@ func (david *Bowie) Mars() *bolt.DB {
 	return db;
 }
 
-func (david *Bowie) Star(k []byte, v []byte) {
+func (david *Bowie) Star(comet []byte, orbit []byte) {
 	db := david.Mars();
 	
 	// Insert data into a bucket.
 	if err := db.Update(func(tx *bolt.Tx) error  {
-		b, err := tx.CreateBucket([]byte("animals"));
+		b, err := tx.CreateBucket([]byte("blackstar"));
 		if err != nil {
-			b = tx.Bucket([]byte("animals"));
+			b = tx.Bucket([]byte("blackstar"));
 		}
-		if err := b.Put(k, v);
+		if err := b.Put(comet, orbit);
 		err != nil { return err }
 
 		return nil
@@ -62,25 +62,25 @@ func (david *Bowie) Star(k []byte, v []byte) {
 	err != nil { log.Fatal(err) };
 }
 
-func (david *Bowie) Oddity(fn func([]Pair)) {
+func (david *Bowie) Oddity(fn func([]Ashes)) {
 	db := david.Mars();
 	
 	// Insert data into a bucket.
 	if err := db.Update(func(tx *bolt.Tx) error  {
-		b, err := tx.CreateBucket([]byte("animals"));
+		b, err := tx.CreateBucket([]byte("blackstar"));
 		if err != nil {
-			b = tx.Bucket([]byte("animals"));
+			b = tx.Bucket([]byte("blackstar"));
 		}
 
 		// Iterate over items in sorted key order.
-		Pairs := []Pair{};
+		Ashess := []Ashes{};
 		if err := b.ForEach(func(k, v []byte) error {
 			//fmt.Printf("A %s is %s.\n", k, v);
-			Pairs = append(Pairs, Pair{key: k, value: v});
+			Ashess = append(Ashess, Ashes{comet: k, orbit: v});
 			return nil
 		});
 		err != nil { return err };
-		fn(Pairs);
+		fn(Ashess);
 		return nil
 	});
 	err != nil { log.Fatal(err) };
