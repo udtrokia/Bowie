@@ -36,7 +36,7 @@ type Ziggy struct {
 
 
 
-+ Mars
++ Star
 
 ```go
 func (david *Bowie) Star(orbit []byte, comet []byte) {}

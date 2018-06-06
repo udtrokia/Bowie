@@ -9,7 +9,7 @@ package main;
 
 import (
 	"fmt"
-	"github.com/udtrokia/bowie"
+	"github.com/udtrokia/Bowie"
 )
 
 func main(){
