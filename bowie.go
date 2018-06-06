@@ -15,6 +15,7 @@ package Bowie
 
 import (
 	"os"
+//	"fmt"
 	"log"
 	"github.com/boltdb/bolt"
 )
@@ -25,13 +26,13 @@ type Bowie struct {
 }
 
 type Ash struct {
-	comet []byte `json:"comet"`
-	orbit []byte `json:"orbit"`
+	Comet []byte `json:"comet"`
+	Orbit []byte `json:"orbit"`
 }
 
 type Asher struct {
-	comet string `json:"comet"`
-	orbit string `json:"orbit"`
+	Comet string `json:"comet"`
+	Orbit string `json:"orbit"`
 }
 
 
@@ -50,7 +51,7 @@ func (david *Bowie) Mars() *bolt.DB {
 	return db;
 }
 
-func (david *Bowie) Star(comet []byte, orbit []byte, fiveyears bool) {
+func (david *Bowie) Star(Comet []byte, Orbit []byte, fiveyears bool) {
 	db := david.Mars();
 	
 	// Insert data into a bucket.
@@ -59,8 +60,8 @@ func (david *Bowie) Star(comet []byte, orbit []byte, fiveyears bool) {
 		if err != nil { b = tx.Bucket([]byte("blackstar"))}
 
 		velvet, _ := b.NextSequence();
-		if(fiveyears == true){ comet = []byte(string(velvet)) };
-		if err := b.Put(comet, orbit);
+		if(fiveyears == true){ Comet = []byte(string(velvet)) };
+		if err := b.Put(Comet, Orbit);
 		err != nil { return err }
 
 		return nil
@@ -86,8 +87,8 @@ func (david *Bowie) Oddity(fn func([]Asher)) {
 		ashes := []Asher{};
 		if err := b.ForEach(func(k []byte, v []byte) error {
 			ashes = append(ashes,Asher{
-				comet: string(k[:len(k)]),
-				orbit: string(v[:len(v)]),
+				Comet: string(k[:]),
+				Orbit: string(v[:]),
 			})
 			return nil
 		});

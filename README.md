@@ -13,9 +13,9 @@
 #### Ashes
 
 ```go
-type Ashes struct {
-  moonage []byte
-  daydream []byte
+type Ash struct {
+  Comet []byte
+  Daydream []byte
 }
 ```
 
@@ -24,9 +24,9 @@ type Ashes struct {
 #### Bowie
 
 ```go
-type Ziggy struct {
-  orbit string
-  comet os.FileMode
+type Bowie struct {
+  moonage string
+  daydream string
 }
 ```
 
