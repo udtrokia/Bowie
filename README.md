@@ -34,9 +34,19 @@ type Ziggy struct {
 
 ###### Methods:
 
++ Mars
 
+```go
+func (david *Bowie) Mars() *bolt.DB {}
+```
 
 + Star
+
+```go
+func (david *Bowie) Star(orbit []byte, comet []byte) {}
+```
+
++ FiveYears
 
 ```go
 func (david *Bowie) Star(orbit []byte, comet []byte) {}
